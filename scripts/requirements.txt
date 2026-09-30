@@ -1,0 +1,6 @@
+traci
+pandas
+matplotlib
+numpy
+seaborn
+scipy

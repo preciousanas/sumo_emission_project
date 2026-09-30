@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    traffic.rou.xml
+    ====================
+    Flow-based route file for SUMO intersection capacity and scenario analysis.
+
+    VEHICLE MIX:
+      car_standard:   40%
+      bus_city:       15%
+      truck_light:    15%
+      delivery_van:   10%
+      vehicle_general:10%
+      coach_long:     10%
+
+    TARGET V/C → TOTAL vehsPerHour TABLE:
+      V/C ~ 20% (LOS A)  → total = 568 veh/hr  → use scale = 1.0 (default below)
+      V/C ~ 40% (LOS A-B)→ total = 1136 veh/hr → use scale = 2.0
+      V/C ~ 60% (LOS C)  → total = 1704 veh/hr → use scale = 3.0
+      V/C ~ 80% (LOS D)  → total = 2272 veh/hr → use scale = 4.0
+      V/C ~100% (LOS E)  → total = 2840 veh/hr → use scale = 5.0
+
+    DEFAULT BELOW = 568 veh/hr total (≈ 20% V/C, LOS A).
+    Each approach gets 142 veh/hr total, split by vehicle mix.
+
+    ROUTES (12 origin-destination pairs, matching original file):
+      north→south, north→east, north→west
+      south→north, south→east, south→west
+      east→west,   east→north, east→south
+      west→east,   west→north, west→south
+
+-->
+
+
+<routes>
+
+    <!-- ================================================================ -->
+    <!-- VEHICLE TYPE DEFINITIONS (identical to original traffic_rou.xml) -->
+    <!-- ================================================================ -->
+
+    <vType id="car_standard"   emissionClass="HBEFA3/PC_G_EU4" maxSpeed="30" />
+    <vType id="bus_city"       emissionClass="HBEFA3/Bus"       maxSpeed="20" />
+    <vType id="truck_light"    emissionClass="HBEFA3/HDV"       maxSpeed="25" />
+    <vType id="delivery_van"   emissionClass="HBEFA3/LDV"       maxSpeed="22" />
+    <vType id="vehicle_general" emissionClass="HBEFA3/PC_G_EU4" maxSpeed="28" />
+    <vType id="coach_long"     emissionClass="HBEFA3/Coach"     maxSpeed="18" />
+
+    <!-- ================================================================ -->
+    <!-- FLOWS                                                            -->
+    <!--                                                                  -->
+    <!-- Total per approach = 142 veh/hr (= 568/4 approaches)            -->
+    <!-- Split by vehicle mix:                                            -->
+    <!--   car_standard:    40% × 142 = 56.8 veh/hr per approach         -->
+    <!--   bus_city:        15% × 142 = 21.3 veh/hr per approach         -->
+    <!--   truck_light:     15% × 142 = 21.3 veh/hr per approach         -->
+    <!--   delivery_van:    10% × 142 = 14.2 veh/hr per approach         -->
+    <!--   vehicle_general: 10% × 142 = 14.2 veh/hr per approach         -->
+    <!--   coach_long:      10% × 142 = 14.2 veh/hr per approach         -->
+    <!--                                                                  -->
+    <!-- Route split (3 turns per approach, approximately equal):         -->
+    <!--   straight: ~37% of veh/hr per approach (most common)           -->
+    <!--   left:     ~32% of veh/hr per approach                         -->
+    <!--   right:    ~31% of veh/hr per approach                         -->
+    <!-- ================================================================ -->
+
+    <!-- ============================================================ -->
+    <!-- NORTH approach (from="north_in")                             -->
+    <!-- ============================================================ -->
+
+    <!-- Straight: north → south -->
+    <flow id="f_car_N_S"   type="car_standard"   from="north_in" to="south_out" begin="0" end="3600" vehsPerHour="21.0" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_N_S"   type="bus_city"        from="north_in" to="south_out" begin="0" end="3600" vehsPerHour="7.9"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_N_S"   type="truck_light"     from="north_in" to="south_out" begin="0" end="3600" vehsPerHour="7.9"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_N_S"   type="delivery_van"    from="north_in" to="south_out" begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_N_S"   type="vehicle_general" from="north_in" to="south_out" begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_N_S"   type="coach_long"      from="north_in" to="south_out" begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+
+    <!-- Left: north → east -->
+    <flow id="f_car_N_E"   type="car_standard"   from="north_in" to="east_out"  begin="0" end="3600" vehsPerHour="18.1" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_N_E"   type="bus_city"        from="north_in" to="east_out"  begin="0" end="3600" vehsPerHour="6.8"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_N_E"   type="truck_light"     from="north_in" to="east_out"  begin="0" end="3600" vehsPerHour="6.8"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_N_E"   type="delivery_van"    from="north_in" to="east_out"  begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_N_E"   type="vehicle_general" from="north_in" to="east_out"  begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_N_E"   type="coach_long"      from="north_in" to="east_out"  begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+
+    <!-- Right: north → west -->
+    <flow id="f_car_N_W"   type="car_standard"   from="north_in" to="west_out"  begin="0" end="3600" vehsPerHour="17.7" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_N_W"   type="bus_city"        from="north_in" to="west_out"  begin="0" end="3600" vehsPerHour="6.6"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_N_W"   type="truck_light"     from="north_in" to="west_out"  begin="0" end="3600" vehsPerHour="6.6"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_N_W"   type="delivery_van"    from="north_in" to="west_out"  begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_N_W"   type="vehicle_general" from="north_in" to="west_out"  begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_N_W"   type="coach_long"      from="north_in" to="west_out"  begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+
+    <!-- ============================================================ -->
+    <!-- SOUTH approach (from="south_in")                             -->
+    <!-- ============================================================ -->
+
+    <flow id="f_car_S_N"   type="car_standard"   from="south_in" to="north_out" begin="0" end="3600" vehsPerHour="21.0" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_S_N"   type="bus_city"        from="south_in" to="north_out" begin="0" end="3600" vehsPerHour="7.9"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_S_N"   type="truck_light"     from="south_in" to="north_out" begin="0" end="3600" vehsPerHour="7.9"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_S_N"   type="delivery_van"    from="south_in" to="north_out" begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_S_N"   type="vehicle_general" from="south_in" to="north_out" begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_S_N"   type="coach_long"      from="south_in" to="north_out" begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+
+    <flow id="f_car_S_E"   type="car_standard"   from="south_in" to="east_out"  begin="0" end="3600" vehsPerHour="18.1" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_S_E"   type="bus_city"        from="south_in" to="east_out"  begin="0" end="3600" vehsPerHour="6.8"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_S_E"   type="truck_light"     from="south_in" to="east_out"  begin="0" end="3600" vehsPerHour="6.8"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_S_E"   type="delivery_van"    from="south_in" to="east_out"  begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_S_E"   type="vehicle_general" from="south_in" to="east_out"  begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_S_E"   type="coach_long"      from="south_in" to="east_out"  begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+
+    <flow id="f_car_S_W"   type="car_standard"   from="south_in" to="west_out"  begin="0" end="3600" vehsPerHour="17.7" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_S_W"   type="bus_city"        from="south_in" to="west_out"  begin="0" end="3600" vehsPerHour="6.6"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_S_W"   type="truck_light"     from="south_in" to="west_out"  begin="0" end="3600" vehsPerHour="6.6"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_S_W"   type="delivery_van"    from="south_in" to="west_out"  begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_S_W"   type="vehicle_general" from="south_in" to="west_out"  begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_S_W"   type="coach_long"      from="south_in" to="west_out"  begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+
+    <!-- ============================================================ -->
+    <!-- EAST approach (from="east_in")                               -->
+    <!-- ============================================================ -->
+
+    <flow id="f_car_E_W"   type="car_standard"   from="east_in"  to="west_out"  begin="0" end="3600" vehsPerHour="21.0" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_E_W"   type="bus_city"        from="east_in"  to="west_out"  begin="0" end="3600" vehsPerHour="7.9"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_E_W"   type="truck_light"     from="east_in"  to="west_out"  begin="0" end="3600" vehsPerHour="7.9"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_E_W"   type="delivery_van"    from="east_in"  to="west_out"  begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_E_W"   type="vehicle_general" from="east_in"  to="west_out"  begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_E_W"   type="coach_long"      from="east_in"  to="west_out"  begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+
+    <flow id="f_car_E_N"   type="car_standard"   from="east_in"  to="north_out" begin="0" end="3600" vehsPerHour="18.1" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_E_N"   type="bus_city"        from="east_in"  to="north_out" begin="0" end="3600" vehsPerHour="6.8"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_E_N"   type="truck_light"     from="east_in"  to="north_out" begin="0" end="3600" vehsPerHour="6.8"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_E_N"   type="delivery_van"    from="east_in"  to="north_out" begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_E_N"   type="vehicle_general" from="east_in"  to="north_out" begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_E_N"   type="coach_long"      from="east_in"  to="north_out" begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+
+    <flow id="f_car_E_S"   type="car_standard"   from="east_in"  to="south_out" begin="0" end="3600" vehsPerHour="17.7" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_E_S"   type="bus_city"        from="east_in"  to="south_out" begin="0" end="3600" vehsPerHour="6.6"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_E_S"   type="truck_light"     from="east_in"  to="south_out" begin="0" end="3600" vehsPerHour="6.6"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_E_S"   type="delivery_van"    from="east_in"  to="south_out" begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_E_S"   type="vehicle_general" from="east_in"  to="south_out" begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_E_S"   type="coach_long"      from="east_in"  to="south_out" begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+
+    <!-- ============================================================ -->
+    <!-- WEST approach (from="west_in")                               -->
+    <!-- ============================================================ -->
+
+    <flow id="f_car_W_E"   type="car_standard"   from="west_in"  to="east_out"  begin="0" end="3600" vehsPerHour="21.0" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_W_E"   type="bus_city"        from="west_in"  to="east_out"  begin="0" end="3600" vehsPerHour="7.9"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_W_E"   type="truck_light"     from="west_in"  to="east_out"  begin="0" end="3600" vehsPerHour="7.9"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_W_E"   type="delivery_van"    from="west_in"  to="east_out"  begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_W_E"   type="vehicle_general" from="west_in"  to="east_out"  begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_W_E"   type="coach_long"      from="west_in"  to="east_out"  begin="0" end="3600" vehsPerHour="5.3"  departLane="best" departSpeed="max" departPos="free" />
+
+    <flow id="f_car_W_N"   type="car_standard"   from="west_in"  to="north_out" begin="0" end="3600" vehsPerHour="18.1" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_W_N"   type="bus_city"        from="west_in"  to="north_out" begin="0" end="3600" vehsPerHour="6.8"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_W_N"   type="truck_light"     from="west_in"  to="north_out" begin="0" end="3600" vehsPerHour="6.8"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_W_N"   type="delivery_van"    from="west_in"  to="north_out" begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_W_N"   type="vehicle_general" from="west_in"  to="north_out" begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_W_N"   type="coach_long"      from="west_in"  to="north_out" begin="0" end="3600" vehsPerHour="4.5"  departLane="best" departSpeed="max" departPos="free" />
+
+    <flow id="f_car_W_S"   type="car_standard"   from="west_in"  to="south_out" begin="0" end="3600" vehsPerHour="17.7" departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_bus_W_S"   type="bus_city"        from="west_in"  to="south_out" begin="0" end="3600" vehsPerHour="6.6"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_trk_W_S"   type="truck_light"     from="west_in"  to="south_out" begin="0" end="3600" vehsPerHour="6.6"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_van_W_S"   type="delivery_van"    from="west_in"  to="south_out" begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_gen_W_S"   type="vehicle_general" from="west_in"  to="south_out" begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+    <flow id="f_coa_W_S"   type="coach_long"      from="west_in"  to="south_out" begin="0" end="3600" vehsPerHour="4.4"  departLane="best" departSpeed="max" departPos="free" />
+
+</routes>

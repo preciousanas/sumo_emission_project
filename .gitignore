@@ -1,0 +1,161 @@
+# =============================================================================
+#  .gitignore for sumo_emission_project
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+#  Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.hypothesis/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+
+# -----------------------------------------------------------------------------
+#  Virtual environments
+# -----------------------------------------------------------------------------
+paper1env/
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# -----------------------------------------------------------------------------
+#  Jupyter
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints
+*.ipynb.bak
+
+# -----------------------------------------------------------------------------
+#  LaTeX build products
+# -----------------------------------------------------------------------------
+*.aux
+*.bbl
+*.blg
+*.brf
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.lot
+*.lof
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# -----------------------------------------------------------------------------
+#  Editor / IDE
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# -----------------------------------------------------------------------------
+#  SUMO run artefacts (fresh files can be regenerated from run_*.py)
+# -----------------------------------------------------------------------------
+*.rou.alt.xml
+sumo.log
+*.crashlog
+
+# -----------------------------------------------------------------------------
+#  Large intermediate / cache files
+# -----------------------------------------------------------------------------
+scripts/__pycache__/
+*.pkl
+*.h5
+*.hdf5
+*.npy.gz
+*.zip
+*.tar.gz
+
+# -----------------------------------------------------------------------------
+#  Backups (previous manuscript revisions)
+# -----------------------------------------------------------------------------
+*.BEFORE_*
+paper1_main_updated.tex
+paper1_main.tex
+overleaf_upload/
+
+# -----------------------------------------------------------------------------
+#  Local scratch (never commit)
+# -----------------------------------------------------------------------------
+outputs/
+tmp/
+scratch/
+*.tmp
+
+# =============================================================================
+#  Option B — raw per-seed simulation outputs excluded from GitHub
+#  These files are large (10 MB - 200 MB each) and cumulatively >100 GB.
+#  Full raw dataset will be archived separately on Zenodo.
+#  The aggregated summary CSVs under */results/ and */summary/ ARE committed,
+#  along with every script needed to regenerate the raw files locally.
+# =============================================================================
+
+#  Pipeline B raw per-seed telemetry (each ~10-200 MB)
+data/V*/baseline/result_seed_*.csv
+data/V*/emission_based/result_seed_*.csv
+
+#  Pipeline B raw per-seed tripinfo XML
+data/V*/baseline/tripinfo_seed_*.xml
+data/V*/emission_based/tripinfo_seed_*.xml
+
+#  Pipeline B raw per-seed statistics XML
+data/V*/baseline/statistics_seed_*.xml
+data/V*/emission_based/statistics_seed_*.xml
+
+#  Pipeline B raw per-seed log files (phase-switch counts — recoverable from logs)
+data/V*/baseline/log_seed_*.txt
+data/V*/emission_based/log_seed_*.txt
+
+#  Pipeline A (capacity sweep) per-seed summaries — keep aggregated only
+data/capacity_analysis/volumes/V*/seed_*/summary.xml
+data/capacity_analysis/volumes/V*/traffic_V*.rou.xml
+
+#  Experiment per-seed raw outputs (threshold search, penetration, composition, cross)
+experiments/threshold_search/data/
+experiments/penetration_rate/data/
+experiments/composition/data/
+experiments/threshold_x_scenarios/data/
+
+#  Keep the aggregated summary CSVs from each experiment
+!experiments/*/results/
+!experiments/*/results/**
+!experiments/*/visuals/
+!experiments/*/visuals/**
+!data/capacity_analysis/summary/
+!data/capacity_analysis/summary/**
+paper1_main_updated(1).tex

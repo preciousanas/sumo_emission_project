@@ -1,0 +1,293 @@
+====================================================================
+  Welch t-test + Paired t-test -- CO2 Savings Significance
+  Controller: emission-based vs gap-based baseline
+  Tested at : thr=50 mg/s (reference) AND optimal threshold per regime
+  Metric    : in-box CO2 per total vehicle (mg)
+              (in_box==True rows; consistent with main analysis pipeline)
+  Optimal thresholds (fine-grid, throughput-constrained):
+    V1500=41 (Free-flow)  V2900=42 (Near-sat)  V3300=135 (Breakdown)  V5000=122 (Gridlock)
+  betainc: Numerical Recipes Lentz CF (no scipy required)
+====================================================================
+
+--------------------------------------------------------------------
+  V1500  --  Free-flow
+--------------------------------------------------------------------
+
+  -- thr=50 mg/s  (default reference) --
+  Seeds: [5, 10, 13, 17, 25, 37, 42, 50, 75, 77]  (n=10)
+
+  Mean in-box CO2/veh  --  Baseline:           269,033.1 mg  +/-  1,824.3
+  Mean in-box CO2/veh  --  Emission-based:     270,005.3 mg  +/-  1,615.4
+
+  Per-seed CO2 savings (baseline - emission) / baseline x 100:
+    seed   5: +1.1778%
+    seed  10: +0.3194%
+    seed  13: +0.1440%
+    seed  17: -2.1832%
+    seed  25: -0.1774%
+    seed  37: -0.0711%
+    seed  42: -1.4933%
+    seed  50: -0.3065%
+    seed  75: -0.6939%
+    seed  77: -0.3733%
+
+  Mean savings: -0.3658%  +/-  0.9381%
+
+  -- Welch t-test (unequal variance, unpaired) --
+     t = -1.2617,  df = 17.74,  p = 0.223406  n.s.
+     Cohen's d = -0.5642  (medium effect)
+
+  -- Paired t-test (matched seeds -- more powerful) --
+     t = -1.2257,  df = 9,  p = 0.251430  n.s.
+
+  NOT statistically significant (paired p=0.2514).
+  Mean savings of 0.3658% is within noise across 10 seeds.
+
+  -- thr=41 mg/s  (regime optimal) --
+  Seeds: [5, 10, 13, 17, 25, 37, 42, 50, 75, 77]  (n=10)
+
+  Mean in-box CO2/veh  --  Baseline:           269,033.1 mg  +/-  1,824.3
+  Mean in-box CO2/veh  --  Emission-based:     268,036.8 mg  +/-  1,189.1
+
+  Per-seed CO2 savings (baseline - emission) / baseline x 100:
+    seed   5: +0.3624%
+    seed  10: +1.7502%
+    seed  13: +0.5729%
+    seed  17: -0.4468%
+    seed  25: +0.8924%
+    seed  37: +0.7747%
+    seed  42: -0.8795%
+    seed  50: +0.0022%
+    seed  75: +1.0709%
+    seed  77: -0.4376%
+
+  Mean savings: +0.3662%  +/-  0.8090%
+
+  -- Welch t-test (unequal variance, unpaired) --
+     t = +1.4467,  df = 15.48,  p = 0.167920  n.s.
+     Cohen's d = +0.6470  (medium effect)
+
+  -- Paired t-test (matched seeds -- more powerful) --
+     t = +1.4443,  df = 9,  p = 0.182561  n.s.
+
+  NOT statistically significant (paired p=0.1826).
+  Mean savings of 0.3662% is within noise across 10 seeds.
+
+  CAUTION: optimal threshold (thr=41) was selected from the same dataset.
+  This test may be optimistic (selection bias). The thr=50 result above
+  is the pre-specified unbiased reference.
+
+--------------------------------------------------------------------
+  V2900  --  Near-saturation
+--------------------------------------------------------------------
+
+  -- thr=50 mg/s  (default reference) --
+  Seeds: [5, 10, 13, 17, 25, 37, 42, 50, 75, 77]  (n=10)
+
+  Mean in-box CO2/veh  --  Baseline:           315,283.6 mg  +/-  3,985.2
+  Mean in-box CO2/veh  --  Emission-based:     311,049.3 mg  +/-  3,082.0
+
+  Per-seed CO2 savings (baseline - emission) / baseline x 100:
+    seed   5: +2.2566%
+    seed  10: -0.3559%
+    seed  13: +0.5315%
+    seed  17: -1.8223%
+    seed  25: +2.7031%
+    seed  37: +4.1336%
+    seed  42: +1.9277%
+    seed  50: +0.1751%
+    seed  75: +0.6134%
+    seed  77: +3.0918%
+
+  Mean savings: +1.3254%  +/-  1.8052%
+
+  -- Welch t-test (unequal variance, unpaired) --
+     t = +2.6579,  df = 16.93,  p = 0.016609  *
+     Cohen's d = +1.1886  (large effect)
+
+  -- Paired t-test (matched seeds -- more powerful) --
+     t = +2.3301,  df = 9,  p = 0.044742  *
+
+  STATISTICALLY SIGNIFICANT (paired p=0.0447).
+  Emission-based controller reduces in-box CO2 by
+  1.3254% on average -- unlikely due to chance.
+
+  -- thr=42 mg/s  (regime optimal) --
+  Seeds: [5, 10, 13, 17, 25, 37, 42, 50, 75, 77]  (n=10)
+
+  Mean in-box CO2/veh  --  Baseline:           315,283.6 mg  +/-  3,985.2
+  Mean in-box CO2/veh  --  Emission-based:     309,249.1 mg  +/-  3,190.5
+
+  Per-seed CO2 savings (baseline - emission) / baseline x 100:
+    seed   5: +3.5536%
+    seed  10: +0.5564%
+    seed  13: +1.2085%
+    seed  17: +1.1720%
+    seed  25: +2.1881%
+    seed  37: +5.2484%
+    seed  42: -0.8582%
+    seed  50: +1.2160%
+    seed  75: +1.6638%
+    seed  77: +3.0334%
+
+  Mean savings: +1.8982%  +/-  1.7081%
+
+  -- Welch t-test (unequal variance, unpaired) --
+     t = +3.7380,  df = 17.18,  p = 0.001612  **
+     Cohen's d = +1.6717  (large effect)
+
+  -- Paired t-test (matched seeds -- more powerful) --
+     t = +3.4760,  df = 9,  p = 0.006983  **
+
+  STATISTICALLY SIGNIFICANT (paired p=0.0070).
+  Emission-based controller reduces in-box CO2 by
+  1.8982% on average -- unlikely due to chance.
+
+  CAUTION: optimal threshold (thr=42) was selected from the same dataset.
+  This test may be optimistic (selection bias). The thr=50 result above
+  is the pre-specified unbiased reference.
+
+--------------------------------------------------------------------
+  V3300  --  Breakdown onset
+--------------------------------------------------------------------
+
+  -- thr=50 mg/s  (default reference) --
+  Seeds: [5, 10, 13, 17, 25, 37, 42, 50, 75, 77]  (n=10)
+
+  Mean in-box CO2/veh  --  Baseline:           511,004.1 mg  +/-  15,426.3
+  Mean in-box CO2/veh  --  Emission-based:     504,131.4 mg  +/-  9,641.6
+
+  Per-seed CO2 savings (baseline - emission) / baseline x 100:
+    seed   5: -3.6430%
+    seed  10: +4.8177%
+    seed  13: +2.9176%
+    seed  17: -3.9471%
+    seed  25: +2.9720%
+    seed  37: +1.3792%
+    seed  42: +4.8854%
+    seed  50: -0.6392%
+    seed  75: -1.2063%
+    seed  77: +5.1286%
+
+  Mean savings: +1.2665%  +/-  3.4529%
+
+  -- Welch t-test (unequal variance, unpaired) --
+     t = +1.1947,  df = 15.10,  p = 0.250637  n.s.
+     Cohen's d = +0.5343  (medium effect)
+
+  -- Paired t-test (matched seeds -- more powerful) --
+     t = +1.2312,  df = 9,  p = 0.249462  n.s.
+
+  NOT statistically significant (paired p=0.2495).
+  Mean savings of 1.2665% is within noise across 10 seeds.
+
+  -- thr=135 mg/s  (regime optimal) --
+  Seeds: [5, 10, 13, 17, 25, 37, 42, 50, 75, 77]  (n=10)
+
+  Mean in-box CO2/veh  --  Baseline:           511,004.1 mg  +/-  15,426.3
+  Mean in-box CO2/veh  --  Emission-based:     496,070.2 mg  +/-  10,345.2
+
+  Per-seed CO2 savings (baseline - emission) / baseline x 100:
+    seed   5: -2.9843%
+    seed  10: +2.7053%
+    seed  13: +4.7086%
+    seed  17: +0.5507%
+    seed  25: +5.4935%
+    seed  37: +1.9318%
+    seed  42: +10.4807%
+    seed  50: -0.6814%
+    seed  75: +2.2814%
+    seed  77: +3.8868%
+
+  Mean savings: +2.8373%  +/-  3.6927%
+
+  -- Welch t-test (unequal variance, unpaired) --
+     t = +2.5425,  df = 15.73,  p = 0.021931  *
+     Cohen's d = +1.1371  (large effect)
+
+  -- Paired t-test (matched seeds -- more powerful) --
+     t = +2.4270,  df = 9,  p = 0.038171  *
+
+  STATISTICALLY SIGNIFICANT (paired p=0.0382).
+  Emission-based controller reduces in-box CO2 by
+  2.8373% on average -- unlikely due to chance.
+
+  CAUTION: optimal threshold (thr=135) was selected from the same dataset.
+  This test may be optimistic (selection bias). The thr=50 result above
+  is the pre-specified unbiased reference.
+
+--------------------------------------------------------------------
+  V5000  --  Gridlock
+--------------------------------------------------------------------
+
+  -- thr=50 mg/s  (default reference) --
+  Seeds: [5, 10, 13, 17, 25, 37, 42, 50, 75, 77]  (n=10)
+
+  Mean in-box CO2/veh  --  Baseline:           717,416.3 mg  +/-  3,493.3
+  Mean in-box CO2/veh  --  Emission-based:     719,299.8 mg  +/-  2,936.0
+
+  Per-seed CO2 savings (baseline - emission) / baseline x 100:
+    seed   5: -0.1407%
+    seed  10: +0.0817%
+    seed  13: -0.6284%
+    seed  17: -0.0167%
+    seed  25: -0.1636%
+    seed  37: -1.0374%
+    seed  42: -0.0102%
+    seed  50: -0.7458%
+    seed  75: -0.1130%
+    seed  77: +0.1385%
+
+  Mean savings: -0.2636%  +/-  0.3970%
+
+  -- Welch t-test (unequal variance, unpaired) --
+     t = -1.3053,  df = 17.48,  p = 0.208724  n.s.
+     Cohen's d = -0.5837  (medium effect)
+
+  -- Paired t-test (matched seeds -- more powerful) --
+     t = -2.0999,  df = 9,  p = 0.065126  n.s.
+
+  NOT statistically significant (paired p=0.0651).
+  Mean savings of 0.2636% is within noise across 10 seeds.
+
+  -- thr=138 mg/s  (regime optimal) --
+  Seeds: [5, 10, 13, 17, 25, 37, 42, 50, 75, 77]  (n=10)
+
+  Mean in-box CO2/veh  --  Baseline:           717,416.3 mg  +/-  3,493.3
+  Mean in-box CO2/veh  --  Emission-based:     716,011.5 mg  +/-  3,052.2
+
+  Per-seed CO2 savings (baseline - emission) / baseline x 100:
+    seed   5: -0.8318%
+    seed  10: +0.5715%
+    seed  13: -0.0524%
+    seed  17: +0.9840%
+    seed  25: +0.3360%
+    seed  37: +0.3547%
+    seed  42: +1.0623%
+    seed  50: -0.7043%
+    seed  75: -0.3573%
+    seed  77: +0.5734%
+
+  Mean savings: +0.1936%  +/-  0.6612%
+
+  -- Welch t-test (unequal variance, unpaired) --
+     t = +0.9576,  df = 17.68,  p = 0.351154  n.s.
+     Cohen's d = +0.4283  (small effect)
+
+  -- Paired t-test (matched seeds -- more powerful) --
+     t = +0.9356,  df = 9,  p = 0.373905  n.s.
+
+  NOT statistically significant (paired p=0.3739).
+  Mean savings of 0.1936% is within noise across 10 seeds.
+
+  CAUTION: optimal threshold (thr=138) was selected from the same dataset.
+  This test may be optimistic (selection bias). The thr=50 result above
+  is the pre-specified unbiased reference.
+
+====================================================================
+  Significance: *** p<0.001  ** p<0.01  * p<0.05  n.s. p>=0.05
+  Cohen's d: negligible <0.2 | small 0.2-0.5 | medium 0.5-0.8 | large >=0.8
+  Paired test preferred: seeds are matched (same RNG seed for both conditions).
+  For optimal-threshold results, treat significance with caution --
+  selecting the threshold from the same data inflates apparent significance.
+====================================================================

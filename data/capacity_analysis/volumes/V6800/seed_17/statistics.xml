@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-04-28 13:00:38 by Eclipse SUMO sumo Version 1.23.1
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\panavberokhai\Desktop\project\sumo_emission_project\config\traffic.net.xml"/>
+        <route-files value="C:\Users\panavberokhai\Desktop\project\sumo_emission_project\data\capacity_analysis\volumes\V6800\traffic_V6800.rou.xml"/>
+    </input>
+
+    <output>
+        <summary-output value="C:\Users\panavberokhai\Desktop\project\sumo_emission_project\data\capacity_analysis\volumes\V6800\seed_17\summary.xml"/>
+        <tripinfo-output value="C:\Users\panavberokhai\Desktop\project\sumo_emission_project\data\capacity_analysis\volumes\V6800\seed_17\tripinfo.xml"/>
+        <statistic-output value="C:\Users\panavberokhai\Desktop\project\sumo_emission_project\data\capacity_analysis\volumes\V6800\seed_17\statistics.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="7200"/>
+        <step-length value="1.0"/>
+    </time>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
+
+    <random_number>
+        <seed value="17"/>
+    </random_number>
+
+</sumoConfiguration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+    <performance clockBegin="8459.54" clockEnd="8474.58" clockDuration="15.04" traciDuration="0.00" realTimeFactor="478.60" vehicleUpdatesPerSecond="205705.46" personUpdatesPerSecond="0.00" begin="0.00" end="7200.00" duration="7200.00"/>
+    <vehicles loaded="6832" inserted="6832" running="112" waiting="0"/>
+    <teleports total="9" jam="0" yield="1" wrongLane="8"/>
+    <safety collisions="0" emergencyStops="0" emergencyBraking="0"/>
+    <persons loaded="0" running="0" jammed="0"/>
+    <personTeleports total="0" abortWait="0" wrongDest="0"/>
+    <vehicleTripStatistics count="6720" routeLength="979.16" speed="3.30" duration="453.81" waitingTime="225.34" timeLoss="381.64" departDelay="1253.18" departDelayWaiting="-1.00" totalTravelTime="3049616.00" totalDepartDelay="8421354.24"/>
+    <pedestrianStatistics number="0" routeLength="0.00" duration="0.00" timeLoss="0.00"/>
+    <rideStatistics number="0"/>
+    <transportStatistics number="0"/>
+</statistics>

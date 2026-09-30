@@ -1,0 +1,5 @@
+volume,regime,optimal_threshold,co2_savings_pct,throughput_change_pct,wait_change_pct
+1500,Free-flow,41,0.372,0.0,-4.52
+2900,Near-saturation,42,1.951,0.0,-8.658
+3300,Breakdown onset,135,3.01,0.0,-13.584
+5000,Gridlock,138,0.196,0.0,-14.994

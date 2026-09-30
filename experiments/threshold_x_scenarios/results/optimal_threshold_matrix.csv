@@ -1,0 +1,37 @@
+scenario_type,scenario_value,volume,regime,optimal_threshold
+penetration,20%,1500,Free-flow,50
+penetration,40%,1500,Free-flow,44
+penetration,60%,1500,Free-flow,25
+penetration,80%,1500,Free-flow,44
+penetration,100%,1500,Free-flow,129
+penetration,20%,2900,Near-saturation,75
+penetration,40%,2900,Near-saturation,33
+penetration,60%,2900,Near-saturation,114
+penetration,80%,2900,Near-saturation,114
+penetration,100%,2900,Near-saturation,200
+penetration,20%,3300,Breakdown onset,114
+penetration,40%,3300,Breakdown onset,129
+penetration,60%,3300,Breakdown onset,114
+penetration,80%,3300,Breakdown onset,44
+penetration,100%,3300,Breakdown onset,25
+penetration,20%,5000,Gridlock,44
+penetration,40%,5000,Gridlock,33
+penetration,60%,5000,Gridlock,114
+penetration,80%,5000,Gridlock,200
+penetration,100%,5000,Gridlock,25
+composition,light,1500,Free-flow,75
+composition,baseline,1500,Free-flow,44
+composition,mixed,1500,Free-flow,150
+composition,heavy,1500,Free-flow,200
+composition,light,2900,Near-saturation,100
+composition,baseline,2900,Near-saturation,129
+composition,mixed,2900,Near-saturation,25
+composition,heavy,2900,Near-saturation,150
+composition,light,3300,Breakdown onset,129
+composition,baseline,3300,Breakdown onset,150
+composition,mixed,3300,Breakdown onset,25
+composition,heavy,3300,Breakdown onset,50
+composition,light,5000,Gridlock,75
+composition,baseline,5000,Gridlock,300
+composition,mixed,5000,Gridlock,75
+composition,heavy,5000,Gridlock,75

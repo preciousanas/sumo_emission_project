@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration><input><net-file value="C:\Users\panavberokhai\Desktop\project\sumo_emission_project\config\traffic.net.xml" /><route-files value="C:\Users\panavberokhai\Desktop\project\sumo_emission_project\data\capacity_analysis\volumes\V4400\traffic_V4400.rou.xml" /></input><time><begin value="0" /><end value="7200" /></time><processing><step-length value="1.0" /></processing></configuration>

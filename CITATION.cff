@@ -1,0 +1,68 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the following paper."
+title: >-
+  Emission-Based Actuated Traffic Signal Control: A Constrained Exhaustive
+  Grid Search Across Traffic Regimes Using SUMO Simulation
+type: article
+authors:
+  - family-names: Anavberokhai
+    given-names: Precious
+    email: panavberokhai@aggies.ncat.edu
+    affiliation: >-
+      Department of Computational Data Science and Engineering,
+      North Carolina Agricultural and Technical State University, USA
+  - family-names: Bikdash
+    given-names: Marwan
+    email: bikdash@ncat.edu
+    affiliation: >-
+      Department of Computational Data Science and Engineering,
+      North Carolina Agricultural and Technical State University, USA
+  - family-names: Comert
+    given-names: Gurcan
+    email: gcomert@ncat.edu
+    affiliation: >-
+      Department of Computational Data Science and Engineering,
+      North Carolina Agricultural and Technical State University, USA
+  - family-names: Gokaraju
+    given-names: Balakrishna
+    email: bgokaraju@ncat.edu
+    affiliation: >-
+      Department of Computational Data Science and Engineering,
+      North Carolina Agricultural and Technical State University, USA
+  - family-names: Mwakalonge
+    given-names: Judith L.
+    email: jmwakalo@scsu.edu
+    affiliation: >-
+      Department of Engineering, 
+      South Carolina State University, USA
+repository-code: "https://github.com/preciousanas/sumo_emission_project"
+license: MIT
+keywords:
+  - emission-based traffic control
+  - actuated signal control
+  - SUMO
+  - CO2 emissions
+  - V2X
+  - congestion regimes
+  - throughput preservation
+year: 2026
+journal: "Transportation Research Interdisciplinary Perspectives"
+preferred-citation:
+  type: article
+  title: >-
+    Emission-Based Actuated Traffic Signal Control: A Constrained Exhaustive
+    Grid Search Across Traffic Regimes Using SUMO Simulation
+  authors:
+    - family-names: Anavberokhai
+      given-names: Precious
+    - family-names: Bikdash
+      given-names: Marwan
+    - family-names: Comert
+      given-names: Gurcan
+    - family-names: Gokaraju
+      given-names: Balakrishna
+    - family-names: Mwakalonge
+      given-names: Judith L.
+  journal: "Transportation Research Interdisciplinary Perspectives"
+  year: 2026
+  notes: "Manuscript submitted for publication."

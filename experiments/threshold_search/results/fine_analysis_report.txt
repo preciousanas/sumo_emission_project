@@ -1,0 +1,209 @@
+===================================================================
+  Threshold Grid Search -- Analysis Report
+  Phase    : fine
+  Generated: 2026-05-29 12:16:42
+===================================================================
+
+  Thresholds analysed : [10, 16, 21, 25, 27, 32, 33, 39, 40, 41, 42, 43, 44, 45, 46, 50, 54, 61, 68, 75, 100, 104, 108, 112, 114, 117, 118, 121, 122, 125, 126, 129, 131, 135, 139, 143, 150, 157, 171, 186, 200, 300]
+  Volumes             : ['V1500', 'V2900', 'V3300', 'V5000']
+  Data points loaded  : 168
+
+  OPTIMAL THRESHOLD PER REGIME  (throughput constraint > -1%)
+  Regime               Volume  Opt Thr   CO2 Sav%    Tput%    Wait%
+  -------------------------------------------------------------------
+  Free-flow              1500       41      +0.37    +0.00    -4.52
+  Near-saturation        2900       42      +1.95    +0.00    -8.66
+  Breakdown onset        3300      135      +3.01    +0.00   -13.58
+  Gridlock               5000      122      +0.09    +0.00   -10.39
+
+===================================================================
+
+  FULL THRESHOLD SCAN  (all data points)
+  Regime                 Vol   Thr      CO2%    Tput%    Wait%   OK?
+  -------------------------------------------------------------------
+  Free-flow             1500    10     +0.08    +0.00    -4.73  YES
+  Free-flow             1500    16     +0.07    +0.00    -4.43  YES
+  Free-flow             1500    21     +0.27    +0.00    -4.40  YES
+  Free-flow             1500    25     +0.33    +0.00    -4.84  YES
+  Free-flow             1500    27     +0.12    +0.00    -3.11  YES
+  Free-flow             1500    32     -0.12    +0.00    -3.44  YES
+  Free-flow             1500    33     +0.04    +0.00    -4.25  YES
+  Free-flow             1500    39     -0.23    +0.00    -2.35  YES
+  Free-flow             1500    40     +0.01    +0.00    -4.16  YES
+  Free-flow             1500    41     +0.37    +0.00    -4.52  YES
+  Free-flow             1500    42     -0.24    +0.00    -2.90  YES
+  Free-flow             1500    43     -0.07    +0.00    -1.48  YES
+  Free-flow             1500    44     +0.34    +0.00    -3.90  YES
+  Free-flow             1500    45     +0.25    +0.00    -5.28  YES
+  Free-flow             1500    46     +0.13    +0.00    -3.95  YES
+  Free-flow             1500    50     -0.36    +0.00    -2.23  YES
+  Free-flow             1500    54     +0.04    +0.00    -3.93  YES
+  Free-flow             1500    61     -0.06    +0.00    -1.93  YES
+  Free-flow             1500    68     -0.03    +0.00    -4.59  YES
+  Free-flow             1500    75     +0.27    +0.00    -5.03  YES
+  Free-flow             1500   100     -0.34    +0.00    -1.55  YES
+  Free-flow             1500   104     -0.08    +0.00    -2.72  YES
+  Free-flow             1500   108     -0.04    +0.00    -3.27  YES
+  Free-flow             1500   112     -0.23    +0.00    -2.49  YES
+  Free-flow             1500   114     -0.23    +0.00    -3.43  YES
+  Free-flow             1500   117     +0.13    +0.00    -3.81  YES
+  Free-flow             1500   118     +0.22    +0.00    -3.72  YES
+  Free-flow             1500   121     -0.09    +0.00    -2.56  YES
+  Free-flow             1500   122     -0.04    +0.00    -3.38  YES
+  Free-flow             1500   125     +0.02    +0.00    -4.55  YES
+  Free-flow             1500   126     -0.14    +0.00    -2.00  YES
+  Free-flow             1500   129     -0.13    +0.00    -3.89  YES
+  Free-flow             1500   131     -0.24    +0.00    -2.56  YES
+  Free-flow             1500   135     -0.17    +0.00    -2.98  YES
+  Free-flow             1500   139     +0.06    +0.00    -3.85  YES
+  Free-flow             1500   143     -0.11    +0.00    -2.95  YES
+  Free-flow             1500   150     +0.29    +0.00    -5.72  YES
+  Free-flow             1500   157     -0.11    +0.00    -2.23  YES
+  Free-flow             1500   171     +0.15    +0.00    -4.71  YES
+  Free-flow             1500   186     +0.08    +0.00    -3.33  YES
+  Free-flow             1500   200     -0.11    +0.00    -4.00  YES
+  Free-flow             1500   300     +0.07    +0.00    -2.68  YES
+  Near-saturation       2900    10     +1.24    +0.00    -7.11  YES
+  Near-saturation       2900    16     +1.14    +0.00    -7.48  YES
+  Near-saturation       2900    21     +1.17    +0.00    -6.88  YES
+  Near-saturation       2900    25     +1.28    +0.00    -7.80  YES
+  Near-saturation       2900    27     +1.11    +0.00    -6.93  YES
+  Near-saturation       2900    32     +1.99    -2.44    -9.12  NO 
+  Near-saturation       2900    33     +1.59    +0.00    -8.31  YES
+  Near-saturation       2900    39     +1.25    +0.00    -7.49  YES
+  Near-saturation       2900    40     +1.60    +0.00    -7.83  YES
+  Near-saturation       2900    41     +1.22    +0.00    -6.92  YES
+  Near-saturation       2900    42     +1.95    +0.00    -8.66  YES
+  Near-saturation       2900    43     +1.11    +0.00    -6.81  YES
+  Near-saturation       2900    44     +1.64    +0.00    -8.14  YES
+  Near-saturation       2900    45     +1.25    +0.00    -7.53  YES
+  Near-saturation       2900    46     +0.64    +0.00    -5.83  YES
+  Near-saturation       2900    50     +1.36    +0.00    -7.87  YES
+  Near-saturation       2900    54     +1.05    +0.00    -6.56  YES
+  Near-saturation       2900    61     +0.89    +0.00    -6.64  YES
+  Near-saturation       2900    68     +0.72    +0.00    -5.62  YES
+  Near-saturation       2900    75     +0.77    +0.00    -5.63  YES
+  Near-saturation       2900   100     +1.30    +0.00    -6.87  YES
+  Near-saturation       2900   104     +0.65    +0.00    -5.36  YES
+  Near-saturation       2900   108     +0.48    +0.00    -5.26  YES
+  Near-saturation       2900   112     +0.90    +0.00    -6.56  YES
+  Near-saturation       2900   114     +0.83    +0.00    -5.46  YES
+  Near-saturation       2900   117     +1.09    +0.00    -7.88  YES
+  Near-saturation       2900   118     +1.10    +0.00    -6.81  YES
+  Near-saturation       2900   121     +1.29    +0.00    -7.44  YES
+  Near-saturation       2900   122     +1.06    +0.00    -6.79  YES
+  Near-saturation       2900   125     +1.90    +0.00    -9.29  YES
+  Near-saturation       2900   126     +1.37    +0.00    -7.76  YES
+  Near-saturation       2900   129     +0.67    +0.00    -5.95  YES
+  Near-saturation       2900   131     +1.52    +0.00    -7.51  YES
+  Near-saturation       2900   135     +1.48    +0.00    -7.83  YES
+  Near-saturation       2900   139     +0.88    +0.00    -5.98  YES
+  Near-saturation       2900   143     +0.93    +0.00    -7.24  YES
+  Near-saturation       2900   150     +1.09    +0.00    -7.07  YES
+  Near-saturation       2900   157     +1.53    +0.00    -8.78  YES
+  Near-saturation       2900   171     +1.05    +0.00    -6.84  YES
+  Near-saturation       2900   186     +0.58    +0.00    -5.18  YES
+  Near-saturation       2900   200     +0.71    +0.00    -5.93  YES
+  Near-saturation       2900   300     +1.06    +0.00    -6.42  YES
+  Breakdown onset       3300    10     +2.19    +0.00   -12.51  YES
+  Breakdown onset       3300    16     +1.13    +0.00   -13.11  YES
+  Breakdown onset       3300    21     +2.06    +0.00   -12.54  YES
+  Breakdown onset       3300    25     +1.97    +0.00   -12.82  YES
+  Breakdown onset       3300    27     +1.02    +0.00   -12.75  YES
+  Breakdown onset       3300    32     +1.75    +0.00   -12.79  YES
+  Breakdown onset       3300    33     +0.64    +0.00   -11.47  YES
+  Breakdown onset       3300    39     +1.96    +0.00   -13.56  YES
+  Breakdown onset       3300    40     +1.22    +0.00   -13.41  YES
+  Breakdown onset       3300    41     -0.49    +0.00   -11.96  YES
+  Breakdown onset       3300    42     +1.25    +0.00   -12.84  YES
+  Breakdown onset       3300    43     +2.60    +0.00   -13.24  YES
+  Breakdown onset       3300    44     +1.74    +0.00   -12.02  YES
+  Breakdown onset       3300    45     +1.24    +0.00   -12.38  YES
+  Breakdown onset       3300    46     +0.48    +0.00   -11.56  YES
+  Breakdown onset       3300    50     +1.36    +0.00   -12.48  YES
+  Breakdown onset       3300    54     +1.68    +0.00   -12.74  YES
+  Breakdown onset       3300    61     +1.74    +0.00   -12.63  YES
+  Breakdown onset       3300    68     +0.49    +0.00   -12.46  YES
+  Breakdown onset       3300    75     +0.54    +0.00   -12.57  YES
+  Breakdown onset       3300   100     +0.99    +0.00   -11.55  YES
+  Breakdown onset       3300   104     -0.25    +0.00   -12.50  YES
+  Breakdown onset       3300   108     +1.59    +0.00   -13.31  YES
+  Breakdown onset       3300   112     +1.22    +0.00   -11.96  YES
+  Breakdown onset       3300   114     +1.57    +0.00   -12.60  YES
+  Breakdown onset       3300   117     +0.95    +0.00   -12.83  YES
+  Breakdown onset       3300   118     +0.21    +0.00   -11.86  YES
+  Breakdown onset       3300   121     +1.09    +0.00   -12.07  YES
+  Breakdown onset       3300   122     +1.06    +0.00   -12.49  YES
+  Breakdown onset       3300   125     +0.70    +0.00   -12.47  YES
+  Breakdown onset       3300   126     +0.41    +0.00   -11.14  YES
+  Breakdown onset       3300   129     +2.58    +0.00   -12.78  YES
+  Breakdown onset       3300   131     +0.97    +0.00   -12.05  YES
+  Breakdown onset       3300   135     +3.01    +0.00   -13.58  YES
+  Breakdown onset       3300   139     +1.59    +0.00   -12.52  YES
+  Breakdown onset       3300   143     +0.52    +0.00   -11.73  YES
+  Breakdown onset       3300   150     +1.76    +0.00   -13.24  YES
+  Breakdown onset       3300   157     -0.24    +0.00   -13.18  YES
+  Breakdown onset       3300   171     +0.23    +0.00   -11.82  YES
+  Breakdown onset       3300   186     +0.26    +0.00   -12.62  YES
+  Breakdown onset       3300   200     -0.36    +0.00   -12.22  YES
+  Breakdown onset       3300   300     +0.05    +0.00   -12.09  YES
+  Gridlock              5000    10     -0.07    +0.00   -15.11  YES
+  Gridlock              5000    16     -0.11    +0.00   -16.58  YES
+  Gridlock              5000    21     +0.71    -2.15   -17.02  NO 
+  Gridlock              5000    25     -0.20    +0.00    -9.72  YES
+  Gridlock              5000    27     +1.78    -3.42   -17.44  NO 
+  Gridlock              5000    32     -0.33    +0.00   -16.93  YES
+  Gridlock              5000    33     -0.27    +0.00   -12.68  YES
+  Gridlock              5000    39     -0.28    +0.00   -11.51  YES
+  Gridlock              5000    40     -0.14    +0.00   -13.93  YES
+  Gridlock              5000    41     -0.12    +0.00   -16.16  YES
+  Gridlock              5000    42     -0.19    +0.00   -15.42  YES
+  Gridlock              5000    43     -0.30    +0.00    -9.92  YES
+  Gridlock              5000    44     -0.03    +0.00    -7.45  YES
+  Gridlock              5000    45     -0.12    +0.00   -11.80  YES
+  Gridlock              5000    46     -0.25    +0.00   -15.62  YES
+  Gridlock              5000    50     -0.26    +0.00   -15.84  YES
+  Gridlock              5000    54     -0.22    +0.00   -12.68  YES
+  Gridlock              5000    61     -0.21    +0.00   -16.07  YES
+  Gridlock              5000    68     -0.17    +0.00   -14.81  YES
+  Gridlock              5000    75     -0.26    +0.00   -13.37  YES
+  Gridlock              5000   100     -0.07    +0.00   -13.43  YES
+  Gridlock              5000   104     -0.01    +0.00   -14.15  YES
+  Gridlock              5000   108     -0.23    +0.00   -12.93  YES
+  Gridlock              5000   112     -0.24    +0.00   -13.63  YES
+  Gridlock              5000   114     +0.01    +0.00   -17.58  YES
+  Gridlock              5000   117     -0.22    +0.00   -11.73  YES
+  Gridlock              5000   118     -0.25    +0.00    -9.96  YES
+  Gridlock              5000   121     -0.32    +0.00   -11.72  YES
+  Gridlock              5000   122     +0.09    +0.00   -10.39  YES
+  Gridlock              5000   125     -0.20    +0.00   -15.11  YES
+  Gridlock              5000   126     -0.23    +0.00   -16.88  YES
+  Gridlock              5000   129     -0.08    +0.00   -14.78  YES
+  Gridlock              5000   131     -0.02    +0.00   -15.61  YES
+  Gridlock              5000   135     -0.10    +0.00   -10.59  YES
+  Gridlock              5000   139     -0.22    +0.00   -14.91  YES
+  Gridlock              5000   143     -0.23    +0.00   -16.61  YES
+  Gridlock              5000   150     -0.20    +0.00   -12.62  YES
+  Gridlock              5000   157     -0.20    +0.00   -10.06  YES
+  Gridlock              5000   171     -0.32    +0.00   -12.94  YES
+  Gridlock              5000   186     -0.34    +0.00   -14.88  YES
+  Gridlock              5000   200     +0.01    +0.00   -14.05  YES
+  Gridlock              5000   300     -0.14    +0.00   -16.69  YES
+
+===================================================================
+
+  FINE-GRID ANALYSIS COMPLETE
+  -------------------------------------------------------------------
+  The optimal thresholds above are your final confirmed values.
+  No further threshold searching is required.
+
+  NEXT STEP -- proceed to Step 5 (Task 2: Penetration Rate):
+  --------------------------------------------------------------
+  python scripts/experiments/run_penetration_experiment.py
+  --------------------------------------------------------------
+
+  These optimal thresholds will be used automatically by Tasks 2, 3,
+  and 4 via the default emission threshold setting (thr=50). The fine
+  search results are available in threshold_summary.csv for reference.
+
+===================================================================

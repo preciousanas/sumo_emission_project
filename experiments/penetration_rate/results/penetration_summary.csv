@@ -1,0 +1,21 @@
+volume,regime,penetration_pct,co2_savings_pct,throughput_change_pct,wait_change_pct,n_seeds_em,n_seeds_bl
+1500,Free-flow,20,0.199,0.0,0.258,10,10
+1500,Free-flow,40,-0.352,0.0,-0.212,10,10
+1500,Free-flow,60,-0.099,0.0,-3.708,10,10
+1500,Free-flow,80,0.057,0.0,-3.83,10,10
+1500,Free-flow,100,-0.36,0.0,-2.233,10,10
+2900,Near-saturation,20,0.777,0.0,-5.1,10,10
+2900,Near-saturation,40,1.21,0.0,-5.872,10,10
+2900,Near-saturation,60,1.582,0.0,-8.521,10,10
+2900,Near-saturation,80,0.832,0.0,-5.569,10,10
+2900,Near-saturation,100,1.361,0.0,-7.872,10,10
+3300,Breakdown onset,20,1.466,0.0,-13.828,10,10
+3300,Breakdown onset,40,1.012,0.0,-13.04,10,10
+3300,Breakdown onset,60,0.09,0.0,-12.783,10,10
+3300,Breakdown onset,80,0.149,0.0,-12.096,10,10
+3300,Breakdown onset,100,1.363,0.0,-12.485,10,10
+5000,Gridlock,20,-1.257,0.0,-24.313,10,10
+5000,Gridlock,40,-0.969,0.0,-29.063,10,10
+5000,Gridlock,60,-0.815,0.0,-29.388,10,10
+5000,Gridlock,80,-0.489,0.0,-24.054,10,10
+5000,Gridlock,100,-0.262,0.0,-15.844,10,10

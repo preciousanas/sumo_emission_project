@@ -1,0 +1,17 @@
+volume,regime,composition,bl_co2_per_veh,em_co2_per_veh,co2_savings_pct,throughput_change_pct,wait_change_pct,n_seeds_em,n_seeds_bl
+1500,Free-flow,baseline,269033.1,270005.3,-0.36,0.0,-2.233,10,10
+1500,Free-flow,light,120875.4,120987.8,-0.093,0.0,-1.357,10,10
+1500,Free-flow,mixed,234177.7,234849.9,-0.286,0.0,-4.731,10,10
+1500,Free-flow,heavy,351982.2,353147.7,-0.33,0.0,-3.644,10,10
+2900,Near-saturation,baseline,315283.6,311049.3,1.361,0.0,-7.872,10,10
+2900,Near-saturation,light,229117.4,239796.3,-4.453,0.0,-4.533,10,10
+2900,Near-saturation,mixed,314817.6,317557.3,-0.863,0.0,-1.072,10,10
+2900,Near-saturation,heavy,407062.8,405039.4,0.5,0.0,-4.792,10,10
+3300,Breakdown onset,baseline,511004.1,504131.4,1.363,0.0,-12.485,10,10
+3300,Breakdown onset,light,337570.0,341224.7,-1.071,0.0,-19.989,10,10
+3300,Breakdown onset,mixed,521914.7,529619.4,-1.455,0.0,-4.984,10,10
+3300,Breakdown onset,heavy,632203.3,616819.0,2.494,0.0,-8.948,10,10
+5000,Gridlock,baseline,717416.3,719299.8,-0.262,0.0,-15.844,10,10
+5000,Gridlock,light,441110.3,444366.0,-0.733,0.0,-51.498,10,10
+5000,Gridlock,mixed,701595.1,705196.2,-0.511,0.0,-47.281,10,10
+5000,Gridlock,heavy,893303.9,892008.5,0.145,0.0,-3.519,10,10
