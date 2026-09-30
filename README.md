@@ -10,7 +10,7 @@ This repository accompanies the paper:
 > Anavberokhai, P., Bikdash, M., Comert, G., Gokaraju, B., & Mwakalonge, J. L.
 > Emission-Based Actuated Traffic Signal Control: A Constrained Exhaustive Grid Search Across
 > Traffic Regimes Using SUMO Simulation.
-> Manuscript submitted to *Transportation Research Interdisciplinary Perspectives* (TRIP), 2026.
+> Manuscript to be submitted to *Transportation Research Interdisciplinary Perspectives* (TRIP), 2026.
 > Code and data archive: [https://doi.org/10.5281/zenodo.23067304](https://doi.org/10.5281/zenodo.23067304)
 
 ## Summary
