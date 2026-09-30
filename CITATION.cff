@@ -3,7 +3,10 @@ message: "If you use this software or data, please cite the following paper."
 title: >-
   Emission-Based Actuated Traffic Signal Control: A Constrained Exhaustive
   Grid Search Across Traffic Regimes Using SUMO Simulation
-type: article
+type: software
+doi: 10.5281/zenodo.23067304
+version: 1.0.0
+date-released: 2026-09-30
 authors:
   - family-names: Anavberokhai
     given-names: Precious
